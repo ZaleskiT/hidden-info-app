@@ -1,0 +1,14 @@
+<div class="input-container">
+    <h2>Enter Message</h2>
+    <input type="text" [(ngModel)]="userInput" placeholder="Write down all hidden information here, in one line.">
+    <button (click)="encryptMessage()">Encrypt</button>
+  
+    <div *ngIf="encryptedMessage" class="encrypted-message">
+      <h3>Encrypted Message</h3>
+      <p>At the start of the game, give the first part to your opponent in Discord. At the end of the game, give the second part to your opponent in Discord and instruct them to come to this page and put both halves in as one string below.</p>
+      <div>
+        <div class="half">{{ encryptedMessage | slice:0:halfLength }}</div>
+        <div class="half">{{ encryptedMessage | slice:halfLength }}</div>
+      </div>
+    </div>
+  </div>

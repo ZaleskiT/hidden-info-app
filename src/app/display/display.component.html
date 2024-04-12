@@ -1,0 +1,15 @@
+
+<div class="display-container">
+  
+    <h2>Combine Halves for Decryption</h2>
+    <input type="text" [(ngModel)]="combinedEncryptedString" placeholder="Combine halves...">
+    <button (click)="decryptMessage()">Decrypt</button>
+  
+    <div *ngIf="decryptedMessage" class="decrypted-message">
+      <h3>Decrypted Message</h3>
+      <p>{{ decryptedMessage }}</p>
+      <p>Unix Timestamp: {{ timestamp }}</p>
+      <p>GMT+0 Time: {{ gmtTime }}</p>
+      <p>Time Difference: {{ timeDifference }}</p>
+    </div>
+  </div>
