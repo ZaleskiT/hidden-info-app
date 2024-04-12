@@ -44,3 +44,13 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+
+  .half > button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

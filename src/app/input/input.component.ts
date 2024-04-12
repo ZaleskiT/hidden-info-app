@@ -23,4 +23,38 @@ export class InputComponent {
       this.halfLength = Math.ceil(this.encryptedMessage.length / 2);
     }
   }
+
+  copyFirstHalfToClipboard(text: string): void {
+    const textArea = document.createElement('textarea');
+    textArea.value = text.substring(0, this.halfLength);
+
+    // Append the textarea to the document
+    document.body.appendChild(textArea);
+
+    // Select the text in the textarea
+    textArea.select();
+
+    // Copy the text to the clipboard
+    document.execCommand('copy');
+
+    // Remove the textarea from the document
+    document.body.removeChild(textArea);
+  }
+
+  copySecondHalfToClipboard(text: string): void {
+    const textArea = document.createElement('textarea');
+    textArea.value = text.substring(this.halfLength, this.encryptedMessage.length);
+
+    // Append the textarea to the document
+    document.body.appendChild(textArea);
+
+    // Select the text in the textarea
+    textArea.select();
+
+    // Copy the text to the clipboard
+    document.execCommand('copy');
+
+    // Remove the textarea from the document
+    document.body.removeChild(textArea);
+  }
 }
