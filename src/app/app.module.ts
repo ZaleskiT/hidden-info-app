@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
 import { DisplayComponent } from './display/display.component';
 import { FormsModule } from '@angular/forms';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputComponent,
-    DisplayComponent
+    DisplayComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,

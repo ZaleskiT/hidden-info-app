@@ -10,6 +10,8 @@ export class InputComponent {
   userInput: string = '';
   encryptedMessage: string = '';
   halfLength: number = 0;
+  toastMessage: string = '';
+  showToast: boolean = false;
 
   encryptMessage(): void {
     if (this.userInput.trim() !== '') {
@@ -39,6 +41,15 @@ export class InputComponent {
 
     // Remove the textarea from the document
     document.body.removeChild(textArea);
+
+    // Show toast notification
+    this.toastMessage = 'First half copied to clipboard!';
+    this.showToast = true;
+
+     // Hide toast after a short delay
+     setTimeout(() => {
+      this.showToast = false;
+    }, 3000);
   }
 
   copySecondHalfToClipboard(text: string): void {
@@ -56,5 +67,14 @@ export class InputComponent {
 
     // Remove the textarea from the document
     document.body.removeChild(textArea);
+
+    // Show toast notification
+    this.toastMessage = 'Second half copied to clipboard!';
+    this.showToast = true;
+
+     // Hide toast after a short delay
+     setTimeout(() => {
+      this.showToast = false;
+    }, 3000);
   }
 }
